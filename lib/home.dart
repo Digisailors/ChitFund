@@ -1,6 +1,5 @@
 import 'package:chitfund/Widget/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 int defaultPadding = 8;
 
@@ -18,7 +17,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        MyDrawer(),
+        const MyDrawer(),
         Expanded(
           child: Scaffold(
             floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -26,7 +25,7 @@ class _HomeState extends State<Home> {
                 Column(mainAxisSize: MainAxisSize.min, children: [
               FloatingActionButton.extended(
                 onPressed: () {},
-                label: Text(' Refresh '),
+                label: const Text(' Refresh '),
                 icon: Image.network(
                   'https://cdn-icons-png.flaticon.com/512/3208/3208743.png',
                   height: 25,
@@ -34,12 +33,12 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               FloatingActionButton.extended(
                 onPressed: () {},
-                label: Text(' Restart  '),
+                label: const Text(' Restart  '),
                 icon: Image.network(
                   'https://cdn-icons-png.flaticon.com/512/5725/5725961.png',
                   height: 25,
@@ -47,12 +46,12 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               FloatingActionButton.extended(
                 onPressed: () {},
-                label: Text('Shutdown'),
+                label: const Text('Shutdown'),
                 icon: Image.network(
                   'https://cdn-icons-png.flaticon.com/512/1/1228.png',
                   height: 25,
