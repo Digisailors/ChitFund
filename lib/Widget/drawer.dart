@@ -1,3 +1,4 @@
+import 'package:chitfund/Accounts/PaymentEntrySearch.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -702,7 +703,9 @@ class MyDrawer extends StatelessWidget {
                             height: Get.height * 0.06,
                             width: double.maxFinite,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentEntrySearch()));
+                              },
                               child: Card(
                                   color: Theme.of(context).colorScheme.outline,
                                   child: Center(
