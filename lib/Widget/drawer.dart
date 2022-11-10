@@ -1,3 +1,4 @@
+import 'package:chitfund/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +36,9 @@ class MyDrawer extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.offAll(() => const Dashboard());
+                      },
                       selectedTileColor: Theme.of(context).colorScheme.primary,
                       leading: Image.network(
                         'https://cdn-icons-png.flaticon.com/512/5432/5432747.png',
@@ -49,7 +52,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
                       collapsedIconColor: Colors.white,
@@ -180,7 +183,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
                       collapsedIconColor: Colors.white,
@@ -423,7 +426,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
                       collapsedIconColor: Colors.white,
@@ -585,7 +588,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
                       collapsedIconColor: Colors.white,
@@ -951,6 +954,7 @@ class MyDrawer extends StatelessWidget {
                                   child: Center(
                                       child: Text(
                                     'Group Monthly Ticket Wise Report',
+                                    textAlign: TextAlign.center,
                                     style:
                                         Theme.of(context).textTheme.bodyText2,
                                   ))),
