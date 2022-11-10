@@ -119,7 +119,7 @@ class Dashboard extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      width: getWidth(context) * 0.16,
+                      width: getWidth(context) * 0.15,
                       child: ListTile(
                         onTap: () {},
                         selectedTileColor:
