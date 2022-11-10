@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:chitfund/constrains.dart';
 import 'package:flutter/material.dart';

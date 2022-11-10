@@ -1,10 +1,17 @@
 import 'package:chitfund/screens/dashboard.dart';
+import 'package:chitfund/screens/master/ledgerMaster.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -55,6 +62,15 @@ class MyDrawer extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
+                      maintainState: false,
+                      initiallyExpanded: index == 1,
+                      onExpansionChanged: (val) {
+                        if (val == true) {
+                          setState(() {
+                            index = 1;
+                          });
+                        }
+                      },
                       collapsedIconColor: Colors.white,
                       iconColor: Colors.white,
                       leading: Image.network(
@@ -71,7 +87,9 @@ class MyDrawer extends StatelessWidget {
                             height: Get.height * 0.06,
                             width: double.maxFinite,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Get.offAll(() => LedgerMaster());
+                              },
                               child: Card(
                                   color: Theme.of(context).colorScheme.outline,
                                   child: Center(
@@ -186,6 +204,15 @@ class MyDrawer extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 10, bottom: 5, right: 10, left: 10),
                     child: ExpansionTile(
+                      maintainState: false,
+                      initiallyExpanded: index == 2,
+                      onExpansionChanged: (val) {
+                        if (val == true) {
+                          setState(() {
+                            index = 2;
+                          });
+                        }
+                      },
                       collapsedIconColor: Colors.white,
                       iconColor: Colors.white,
                       leading: Image.network(
