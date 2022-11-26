@@ -3,6 +3,8 @@ import 'package:chitfund/screens/master/ledgerMaster.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../screens/transactions/auctionentry.dart';
+
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
@@ -229,7 +231,9 @@ class _MyDrawerState extends State<MyDrawer> {
                             height: Get.height * 0.06,
                             width: double.maxFinite,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Get.offAll(() => AuctionEntry());
+                              },
                               child: Card(
                                   color: Theme.of(context).colorScheme.outline,
                                   child: Center(
