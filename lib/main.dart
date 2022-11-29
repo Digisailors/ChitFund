@@ -1,8 +1,15 @@
 import 'package:chitfund/color_schemes.dart';
 import 'package:chitfund/home.dart';
+import 'package:chitfund/screens/Reports/allcollectrepform.dart';
 import 'package:chitfund/screens/Reports/cashbookreport.dart';
+import 'package:chitfund/screens/Reports/checkcollectrep.dart';
+import 'package:chitfund/screens/Reports/collectmonthwiserep.dart';
 import 'package:chitfund/screens/Reports/collectmonthwiserepform.dart';
+import 'package:chitfund/screens/Reports/collectsumrep.dart';
+import 'package:chitfund/screens/Reports/collectsumrepform.dart';
 import 'package:chitfund/screens/Reports/daybookreport.dart';
+import 'package:chitfund/screens/Reports/gradelvlrep.dart';
+import 'package:chitfund/screens/Reports/gradelvlrepform.dart';
 import 'package:chitfund/screens/Reports/groupdetailedstatement.dart';
 import 'package:chitfund/screens/Reports/groupdetailedstatform.dart';
 import 'package:chitfund/screens/Reports/grpmonticwiserep.dart';
@@ -10,6 +17,8 @@ import 'package:chitfund/screens/Reports/ledgerbaldetform.dart';
 import 'package:chitfund/screens/Reports/ledgerbaldetrep.dart';
 import 'package:chitfund/screens/Reports/ledgerbalrep.dart';
 import 'package:chitfund/screens/Reports/ledgerbalrepcs.dart';
+import 'package:chitfund/screens/Reports/pendingsumrep.dart';
+import 'package:chitfund/screens/Reports/pendingsumrepform.dart';
 import 'package:chitfund/screens/dashboard.dart';
 import 'package:chitfund/screens/master/ledgerMaster.dart';
 import 'package:chitfund/screens/transactions/Incentivecreation.dart';
@@ -52,7 +61,7 @@ class MyApp extends StatelessWidget {
               color: Colors.black, fontWeight: FontWeight.w600, fontSize: 16),
         ),
       ),
-      home: GroupMonthlyTicketWiseReport(),
+      home: AllCollectionReportForm(),
       builder: (context, child) => Home(child: child!),
     );
   }

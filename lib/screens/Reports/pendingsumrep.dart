@@ -10,20 +10,20 @@ import '../../Widget/searchrow.dart';
 import '../../constrains.dart';
 import '../transactions/cAppbar.dart';
 
-class CollectionMonthlyWiseReport extends StatefulWidget {
-  const CollectionMonthlyWiseReport({Key? key}) : super(key: key);
+class PendingSummariseReport extends StatefulWidget {
+  const PendingSummariseReport({Key? key}) : super(key: key);
 
   @override
-  State<CollectionMonthlyWiseReport> createState() => _CollectionMonthlyWiseReportState();
+  State<PendingSummariseReport> createState() => _PendingSummariseReportState();
 }
 
-class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseReport> {
+class _PendingSummariseReportState extends State<PendingSummariseReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          cAppBar(ctitle: "Collection Monthly Wise Report", acc: "User 1"),
+          cAppBar(ctitle: "Pending Summarise Report", acc: "User 1"),
           Container(
             color: getColortheme(context).surfaceVariant,
             height: getHeight(context)-getHeight(context) * 0.1,
@@ -63,7 +63,7 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
                   width: double.infinity,
                   child: HorizontalDataTable(
                     leftHandSideColumnWidth: 70,
-                    rightHandSideColumnWidth: 1220,
+                    rightHandSideColumnWidth: 1150,
                     isFixedHeader: true,
                     itemCount: 10,
                     rowSeparatorWidget: const Divider(
@@ -87,19 +87,15 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
   List<Widget> _getTitleWidget() {
     return [
       _getTitleItemWidget('S. No', 70),
-      _getTitleItemWidget('Group No', 120),
-      _getTitleItemWidget('03-Apr-22', 100),
-      _getTitleItemWidget('04-Apr-22', 100),
-      _getTitleItemWidget('05-Apr-22', 100),
-      _getTitleItemWidget('06-Apr-22', 100),
-      _getTitleItemWidget('07-Apr-22', 100),
-      _getTitleItemWidget('08-Apr-22', 100),
-      _getTitleItemWidget('09-Apr-22', 100),
-      _getTitleItemWidget('10-Apr-22', 100),
-      _getTitleItemWidget('11-Apr-22', 100),
-      _getTitleItemWidget('12-Apr-22', 100),
-      _getTitleItemWidget('13-Apr-22', 100),
-
+      _getTitleItemWidget('A. Code', 100),
+      _getTitleItemWidget('Customer', 200),
+      _getTitleItemWidget('Group No', 130),
+      _getTitleItemWidget('Tic No', 120),
+      _getTitleItemWidget('Inst', 120),
+      _getTitleItemWidget('No Inst', 120),
+      _getTitleItemWidget('Balance', 120),
+      _getTitleItemWidget('Bill Date', 120),
+      _getTitleItemWidget('Mobile No', 120),
     ];
   }
 
@@ -133,18 +129,15 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
   Widget _generateRightHandSideColumnRow(BuildContext context, int index){
     return Row(
       children: [
+        ColumnCellTable(text: "hello", w : 100, h : 35),
+        ColumnCellTable(text: "hello", w : 200, h : 35),
+        ColumnCellTable(text: "hello", w : 130, h : 35),
         ColumnCellTable(text: "hello", w : 120, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
+        ColumnCellTable(text: "hello", w : 120, h : 35),
+        ColumnCellTable(text: "hello", w : 120, h : 35),
+        ColumnCellTable(text: "hello", w : 120, h : 35),
+        ColumnCellTable(text: "hello", w : 120, h : 35),
+        ColumnCellTable(text: "hello", w : 120, h : 35),
       ],
     );
   }

@@ -10,20 +10,20 @@ import '../../Widget/searchrow.dart';
 import '../../constrains.dart';
 import '../transactions/cAppbar.dart';
 
-class CollectionMonthlyWiseReport extends StatefulWidget {
-  const CollectionMonthlyWiseReport({Key? key}) : super(key: key);
+class CollectionSummariseReport extends StatefulWidget {
+  const CollectionSummariseReport({Key? key}) : super(key: key);
 
   @override
-  State<CollectionMonthlyWiseReport> createState() => _CollectionMonthlyWiseReportState();
+  State<CollectionSummariseReport> createState() => _CollectionSummariseReportState();
 }
 
-class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseReport> {
+class _CollectionSummariseReportState extends State<CollectionSummariseReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          cAppBar(ctitle: "Collection Monthly Wise Report", acc: "User 1"),
+          cAppBar(ctitle: "Collection Summarise Report", acc: "User 1"),
           Container(
             color: getColortheme(context).surfaceVariant,
             height: getHeight(context)-getHeight(context) * 0.1,
@@ -62,8 +62,8 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
                   height: Get.height * 0.5,
                   width: double.infinity,
                   child: HorizontalDataTable(
-                    leftHandSideColumnWidth: 70,
-                    rightHandSideColumnWidth: 1220,
+                    leftHandSideColumnWidth: 150,
+                    rightHandSideColumnWidth: 1100,
                     isFixedHeader: true,
                     itemCount: 10,
                     rowSeparatorWidget: const Divider(
@@ -86,20 +86,11 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
 
   List<Widget> _getTitleWidget() {
     return [
-      _getTitleItemWidget('S. No', 70),
-      _getTitleItemWidget('Group No', 120),
-      _getTitleItemWidget('03-Apr-22', 100),
-      _getTitleItemWidget('04-Apr-22', 100),
-      _getTitleItemWidget('05-Apr-22', 100),
-      _getTitleItemWidget('06-Apr-22', 100),
-      _getTitleItemWidget('07-Apr-22', 100),
-      _getTitleItemWidget('08-Apr-22', 100),
-      _getTitleItemWidget('09-Apr-22', 100),
-      _getTitleItemWidget('10-Apr-22', 100),
-      _getTitleItemWidget('11-Apr-22', 100),
-      _getTitleItemWidget('12-Apr-22', 100),
-      _getTitleItemWidget('13-Apr-22', 100),
-
+      _getTitleItemWidget('S. No', 150),
+      _getTitleItemWidget('Bill Date', 180),
+      _getTitleItemWidget('Particulars', 250),
+      _getTitleItemWidget('Amount', 300),
+      _getTitleItemWidget('', 380),
     ];
   }
 
@@ -133,18 +124,10 @@ class _CollectionMonthlyWiseReportState extends State<CollectionMonthlyWiseRepor
   Widget _generateRightHandSideColumnRow(BuildContext context, int index){
     return Row(
       children: [
-        ColumnCellTable(text: "hello", w : 120, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
+        ColumnCellTable(text: "hello", w : 150, h : 35),
+        ColumnCellTable(text: "hello", w : 250, h : 35),
+        ColumnCellTable(text: "hello", w : 300, h : 35),
+        ColumnCellTable(text: "", w : 380, h : 35),
       ],
     );
   }
