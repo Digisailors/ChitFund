@@ -11,14 +11,14 @@ import '../../Widget/columncelltable.dart';
 import '../../Widget/drawer.dart';
 import '../../constrains.dart';
 
-class DebotMaster extends StatefulWidget {
-  const DebotMaster({Key? key}) : super(key: key);
+class ChitMaster extends StatefulWidget {
+  const ChitMaster({Key? key}) : super(key: key);
 
   @override
-  State<DebotMaster> createState() => _DebotMasterState();
+  State<ChitMaster> createState() => _ChitMasterState();
 }
 
-class _DebotMasterState extends State<DebotMaster> {
+class _ChitMasterState extends State<ChitMaster> {
 
   String tdata = DateFormat("hh:mm:ss a").format(DateTime.now());
   String cdate = DateFormat("dd-MM-yyyy").format(DateTime.now());
@@ -31,7 +31,7 @@ class _DebotMasterState extends State<DebotMaster> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "Master Debot",
+          "Chit Master",
           style: TextStyle(
               fontSize: 32,
               color: Colors.black,
@@ -103,7 +103,7 @@ class _DebotMasterState extends State<DebotMaster> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Row(
                       children: [
@@ -112,7 +112,7 @@ class _DebotMasterState extends State<DebotMaster> {
                           style: getTexttheme(context).bodyText2,
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 15,
                         ),
                         TtextField(text: '', w: 200,),
                         SizedBox(
@@ -121,22 +121,34 @@ class _DebotMasterState extends State<DebotMaster> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Debtor", w: 250),
+                        TtextField(text: "Group No", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 1", w: 250),
+                        TtextField(text: "Chit Amount", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 1", w: 250),
+                        TtextField(text: "Auct Date", w: 130),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Auct Time", w: 130),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Auto Auction (select)", w: 180),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Group Scheme (select)", w: 180),
                         Spacer()
                       ],
                     ),
@@ -148,15 +160,23 @@ class _DebotMasterState extends State<DebotMaster> {
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Contact Person", w: 250),
+                        TtextField(text: "First No", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 2", w: 250),
+                        TtextField(text: "Agreement", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 2", w: 250),
+                        TtextField(text: "Comm %", w: 130),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Draw %", w: 130),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Regd. Office", w: 370),
                         Spacer()
                       ],
                     ),
@@ -168,19 +188,23 @@ class _DebotMasterState extends State<DebotMaster> {
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "D Code", w: 90),
+                        TtextField(text: "No. of Inst", w: 130),
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
-                        TtextField(text: "D Debtor", w: 150),
+                        TtextField(text: "Inst Type(select)", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Place", w: 250),
+                        TtextField(text: "Starting Date", w: 130),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Place", w: 250),
+                        TtextField(text: "Maturity Date", w: 130),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Narration", w: 370),
                         Spacer()
                       ],
                     ),
@@ -189,95 +213,47 @@ class _DebotMasterState extends State<DebotMaster> {
                     ),
                     Row(
                       children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        TtextField(text: "Code (SEL)", w: 90),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Area Name (select)", w: 150),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        TtextField(text: "State", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Pincode", w: 90),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        TtextField(text: "State", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Pincode", w: 90),
-                        Spacer()
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        TtextField(text: "Relation", w: 90),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Nominee", w: 150),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        TtextField(text: "Contact No.", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Mobile No.", w: 90),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        TtextField(text: "Contact No.", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Mobile No.", w: 90),
-                        Spacer()
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        TtextField(text: "S/D/W/C", w: 120),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "D.O.B", w: 120),
-                        Spacer()
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        TtextField(text: "Narration", w: Get.width*0.5),
                         Spacer(),
+                        checkbox(context),
+                        Text("Bank Finance",
+                          style: getTexttheme(context).caption,),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        TtextField(text: "Postpone Inst No", w: 150),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Postpone Inst Date", w: 150),
+                        SizedBox(
+                          width: 80,
+                        )
                       ],
                     ),
                     SizedBox(
                       height: 20,
+                    ),
+                    Container(
+                      // color: Colors.blue,
+                      height: Get.height * 0.25,
+                      width: double.infinity,
+                      child: HorizontalDataTable(
+                        leftHandSideColumnWidth: 70,
+                        rightHandSideColumnWidth: 1150,
+                        isFixedHeader: true,
+                        itemCount: 6,
+                        rowSeparatorWidget: const Divider(
+                          color: Colors.black54,
+                          height: 1.0,
+                          thickness: 0.0,
+                        ),
+                        headerWidgets: _getTitleWidget1(),
+                        leftSideItemBuilder: _generateFirstColumnRow1,
+                        rightSideItemBuilder: _generateRightHandSideColumnRow1,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Container(
                       // color: Colors.blue,
@@ -336,7 +312,7 @@ class _DebotMasterState extends State<DebotMaster> {
                   children: [
                     checkbox(context),
                     Text("Search",
-                        style: getTexttheme(context).caption,)
+                      style: getTexttheme(context).caption,)
                   ],
                 ),
                 SizedBox(
@@ -420,11 +396,12 @@ class _DebotMasterState extends State<DebotMaster> {
       color: Colors.blueAccent,
       child: Center(
         child: Text(label, style: TextStyle(fontWeight: FontWeight.bold,
-            color: Colors.white)
+            color: Colors.white,
+        fontSize: 14)
         ),
       ),
       width: width,
-      height: 56,
+      height: 40,
       padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
       alignment: Alignment.centerLeft,
     );
@@ -465,6 +442,64 @@ class _DebotMasterState extends State<DebotMaster> {
           isChecked = value!;
         });
       },
+    );
+  }
+
+  //2nd table
+
+  List<Widget> _getTitleWidget1() {
+    return [
+      _getTitleItemWidget1('S. No', 70),
+      _getTitleItemWidget1('Id', 80),
+      _getTitleItemWidget1('Ledger', 180),
+      _getTitleItemWidget1('Ledger Grp', 120),
+      _getTitleItemWidget1('Code', 120),
+      _getTitleItemWidget1('Auct Code', 120),
+      _getTitleItemWidget1('Area', 120),
+      _getTitleItemWidget1('Nominee', 140),
+      _getTitleItemWidget1('Relation', 140),
+    ];
+  }
+  Widget _getTitleItemWidget1(String label, double width) {
+    return Container(
+      color: Colors.blueAccent,
+      child: Center(
+        child: Text(label, style: TextStyle(fontWeight: FontWeight.bold,
+            fontSize: 14,
+            color: Colors.white)
+        ),
+      ),
+      width: width,
+      height: 40,
+      padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+      alignment: Alignment.centerLeft,
+    );
+  }
+
+  Widget _generateFirstColumnRow1(BuildContext context, int index) {
+    return Container(
+      // child: Text(widget.user.userInfo[index].name),
+      width: 75,
+      child: Text('1',
+        style: TextStyle(color: Colors.black),),
+      height: 35,
+      padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+      alignment: Alignment.centerLeft,
+    );
+  }
+
+  Widget _generateRightHandSideColumnRow1(BuildContext context, int index) {
+    return Row(
+      children: <Widget>[
+        ColumnCellTable(text: 'hello',w:80,h:35),
+        ColumnCellTable(text: 'hello',w:180,h:35),
+        ColumnCellTable(text: 'hello',w:120,h:35),
+        ColumnCellTable(text: 'hello',w:120,h:35),
+        ColumnCellTable(text: 'hello',w:120,h:35),
+        ColumnCellTable(text: 'hello',w:120,h:35),
+        ColumnCellTable(text: 'hello',w:140,h:35),
+        ColumnCellTable(text: 'hello',w:140,h:35),
+      ],
     );
   }
 }

@@ -11,14 +11,14 @@ import '../../Widget/columncelltable.dart';
 import '../../Widget/drawer.dart';
 import '../../constrains.dart';
 
-class DebotMaster extends StatefulWidget {
-  const DebotMaster({Key? key}) : super(key: key);
+class AgentMaster extends StatefulWidget {
+  const AgentMaster({Key? key}) : super(key: key);
 
   @override
-  State<DebotMaster> createState() => _DebotMasterState();
+  State<AgentMaster> createState() => _AgentMasterState();
 }
 
-class _DebotMasterState extends State<DebotMaster> {
+class _AgentMasterState extends State<AgentMaster> {
 
   String tdata = DateFormat("hh:mm:ss a").format(DateTime.now());
   String cdate = DateFormat("dd-MM-yyyy").format(DateTime.now());
@@ -31,7 +31,7 @@ class _DebotMasterState extends State<DebotMaster> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "Master Debot",
+          "Agent Master",
           style: TextStyle(
               fontSize: 32,
               color: Colors.black,
@@ -103,11 +103,17 @@ class _DebotMasterState extends State<DebotMaster> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Row(
                       children: [
                         Spacer(),
+                        checkbox(context),
+                        Text("Photo",
+                        style: getTexttheme(context).caption,),
+                        SizedBox(
+                          width: 100,
+                        ),
                         Text("Today's Date",
                           style: getTexttheme(context).bodyText2,
                         ),
@@ -121,163 +127,230 @@ class _DebotMasterState extends State<DebotMaster> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Debtor", w: 250),
+                        TtextField(text: "Ledger", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 1", w: 250),
+                        TtextField(text: "Occupation", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 1", w: 250),
+                        TtextField(text: "Ref Chit No.", w: 210),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Op Debit", w: 210),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Contact Person", w: 250),
+                        TtextField(text: "Ledger Group Select", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 2", w: 250),
+                        TtextField(text: "Address 1", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Address 2", w: 250),
+                        TtextField(text: "Address 1", w: 210),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Op Credit", w: 210),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "D Code", w: 90),
+                        TtextField(text: "Contact Person", w: 210),
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
-                        TtextField(text: "D Debtor", w: 150),
+                        TtextField(text: "Address 2", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Place", w: 250),
+                        TtextField(text: "Address 2", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Place", w: 250),
+                        TtextField(text: "Agent Code", w: 210),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Code (SEL)", w: 90),
+                        TtextField(text: "C Code", w: 80),
                         SizedBox(
                           width: 10,
                         ),
-                        TtextField(text: "Area Name (select)", w: 150),
+                        TtextField(text: "DLedger", w: 120),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "State", w: 150),
+                        TtextField(text: "Location", w: 210),
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
-                        TtextField(text: "Pincode", w: 90),
+                        TtextField(text: "Place", w: 210),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "State", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Pincode", w: 90),
+                        TtextField(text: "Password", w: 210),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Relation", w: 90),
+                        TtextField(text: "Code (SEL)", w: 80),
                         SizedBox(
                           width: 10,
                         ),
-                        TtextField(text: "Nominee", w: 150),
+                        TtextField(text: "Area Name (select)", w: 120),
                         SizedBox(
-                          width: 25,
+                          width: 20,
                         ),
-                        TtextField(text: "Contact No.", w: 150),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TtextField(text: "Mobile No.", w: 90),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        TtextField(text: "Contact No.", w: 150),
+                        TtextField(text: "Place", w: 120),
                         SizedBox(
                           width: 10,
                         ),
-                        TtextField(text: "Mobile No.", w: 90),
+                        TtextField(text: "Pincode", w: 80),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "State", w: 120),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Pincode", w: 80),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Download", w: 210),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "S/D/W/C", w: 120),
+                        TtextField(text: "Relation", w: 80),
                         SizedBox(
                           width: 10,
                         ),
-                        TtextField(text: "D.O.B", w: 120),
+                        TtextField(text: "Nominee", w: 120),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Contact No.", w: 120),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Mobile No.", w: 80),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Contact No.", w: 120),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Mobile No.", w: 80),
+                        SizedBox(
+                          width: 20,
+                        ),
                         Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       children: [
                         SizedBox(
                           width: 20,
                         ),
-                        TtextField(text: "Narration", w: Get.width*0.5),
-                        Spacer(),
+                        TtextField(text: "S/D/W/C", w: 80),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Name", w: 120),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Bank Name", w: 210),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Bank Acc No.", w: 120),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TtextField(text: "Bank IFSC", w: 80),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Bank Branch", w: 210),
+                        Spacer()
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height:15
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text("D.O.B",
+                        style: getTexttheme(context).bodyText2,),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "", w: 140),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        TtextField(text: "Narration", w: 680)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
                     ),
                     Container(
                       // color: Colors.blue,
@@ -336,7 +409,7 @@ class _DebotMasterState extends State<DebotMaster> {
                   children: [
                     checkbox(context),
                     Text("Search",
-                        style: getTexttheme(context).caption,)
+                      style: getTexttheme(context).caption,)
                   ],
                 ),
                 SizedBox(

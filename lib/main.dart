@@ -25,6 +25,8 @@ import 'package:chitfund/screens/Reports/ledgerbalrepcs.dart';
 import 'package:chitfund/screens/Reports/pendingsumrep.dart';
 import 'package:chitfund/screens/Reports/pendingsumrepform.dart';
 import 'package:chitfund/screens/dashboard.dart';
+import 'package:chitfund/screens/master/agentmaster.dart';
+import 'package:chitfund/screens/master/chitmaster.dart';
 import 'package:chitfund/screens/master/debotmaster.dart';
 import 'package:chitfund/screens/master/ledgerMaster.dart';
 import 'package:chitfund/screens/transactions/Incentivecreation.dart';
