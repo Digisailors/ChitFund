@@ -10,14 +10,14 @@ import 'package:intl/intl.dart';
 import '../../Widget/TButton.dart';
 import '../../Widget/columncelltable.dart';
 
-class DailyCollection extends StatefulWidget {
-  const DailyCollection({Key? key}) : super(key: key);
+class DailyCollectionEntry extends StatefulWidget {
+  const DailyCollectionEntry({Key? key}) : super(key: key);
 
   @override
-  State<DailyCollection> createState() => _DailyCollectionState();
+  State<DailyCollectionEntry> createState() => _DailyCollectionEntryState();
 }
 
-class _DailyCollectionState extends State<DailyCollection> {
+class _DailyCollectionEntryState extends State<DailyCollectionEntry> {
 
   String tdata = DateFormat("hh:mm:ss a").format(DateTime.now());
   String cdate = DateFormat("dd-MM-yyyy").format(DateTime.now());

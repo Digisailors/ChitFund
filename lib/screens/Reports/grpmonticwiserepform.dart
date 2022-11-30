@@ -7,14 +7,14 @@ import '../../Widget/searchrow.dart';
 import '../../constrains.dart';
 import '../transactions/cAppbar.dart';
 
-class GroupMonthlyTicketWiseReport extends StatefulWidget {
-  const GroupMonthlyTicketWiseReport({Key? key}) : super(key: key);
+class GroupMonthlyTicketWiseReportForm extends StatefulWidget {
+  const GroupMonthlyTicketWiseReportForm({Key? key}) : super(key: key);
 
   @override
-  State<GroupMonthlyTicketWiseReport> createState() => _GroupMonthlyTicketWiseReportState();
+  State<GroupMonthlyTicketWiseReportForm> createState() => _GroupMonthlyTicketWiseReportFormState();
 }
 
-class _GroupMonthlyTicketWiseReportState extends State<GroupMonthlyTicketWiseReport> {
+class _GroupMonthlyTicketWiseReportFormState extends State<GroupMonthlyTicketWiseReportForm> {
   bool isChecked = false;
   @override
   Widget build(BuildContext context) {

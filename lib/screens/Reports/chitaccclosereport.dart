@@ -7,23 +7,25 @@ import 'package:horizontal_data_table/horizontal_data_table.dart';
 import '../../Widget/TButton.dart';
 import '../../Widget/columncelltable.dart';
 import '../../Widget/searchrow.dart';
+import '../../Widget/topwidget.dart';
 import '../../constrains.dart';
 import '../transactions/cAppbar.dart';
 
-class DayBookReport extends StatefulWidget {
-  const DayBookReport({Key? key}) : super(key: key);
+class ChitAccountCloseReport extends StatefulWidget {
+  const ChitAccountCloseReport({Key? key}) : super(key: key);
 
   @override
-  State<DayBookReport> createState() => _DayBookReportState();
+  State<ChitAccountCloseReport> createState() => _ChitAccountCloseReportState();
 }
 
-class _DayBookReportState extends State<DayBookReport> {
+class _ChitAccountCloseReportState extends State<ChitAccountCloseReport> {
   @override
+  bool isChecked = false;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          cAppBar(ctitle: "Day Book Report", acc: "User 1"),
+          cAppBar(ctitle: "Chit Account Close Report", acc: "User 1"),
           Container(
             color: getColortheme(context).surfaceVariant,
             height: getHeight(context)-getHeight(context) * 0.1,
@@ -37,23 +39,7 @@ class _DayBookReportState extends State<DayBookReport> {
                 SizedBox(
                   height: 40,
                 ),
-                Row(
-                  children: [
-                    Spacer(flex: 2,),
-                    TButton(text: "Top", icon: Icons.arrow_circle_up, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Excel", icon: Icons.file_copy_outlined, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Preview", icon: Icons.content_paste_search_sharp, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Pdf", icon: Icons.picture_as_pdf, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Bottom", icon: Icons.arrow_circle_down_outlined, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Close (ESC)", icon: Icons.close, h: 35, w: 120),
-                    Spacer(flex: 2,)
-                  ],
-                ),
+                TopWidget(),
                 SizedBox(
                   height: 50,
                 ),
@@ -65,7 +51,7 @@ class _DayBookReportState extends State<DayBookReport> {
                     leftHandSideColumnWidth: 70,
                     rightHandSideColumnWidth: 1150,
                     isFixedHeader: true,
-                    itemCount: 10,
+                    itemCount: 0,
                     rowSeparatorWidget: const Divider(
                       color: Colors.black54,
                       height: 1.0,
@@ -87,12 +73,13 @@ class _DayBookReportState extends State<DayBookReport> {
   List<Widget> _getTitleWidget() {
     return [
       _getTitleItemWidget('S. No', 70),
-      _getTitleItemWidget('Particulars', 250),
-      _getTitleItemWidget('Vch. Type', 250),
-      _getTitleItemWidget('V. No', 150),
-      _getTitleItemWidget('Debit', 150),
-      _getTitleItemWidget('Credit', 150),
-      _getTitleItemWidget('Close Bal', 200),
+      _getTitleItemWidget('Group No', 120),
+      _getTitleItemWidget('Tic No', 100),
+      _getTitleItemWidget('Ledger', 330),
+      _getTitleItemWidget('C Code', 150),
+      _getTitleItemWidget('No Inst', 150),
+      _getTitleItemWidget('Inst No', 150),
+      _getTitleItemWidget('Close', 150),
     ];
   }
 
@@ -126,13 +113,31 @@ class _DayBookReportState extends State<DayBookReport> {
   Widget _generateRightHandSideColumnRow(BuildContext context, int index){
     return Row(
       children: [
-        ColumnCellTable(text: "hello", w : 250, h : 35),
-        ColumnCellTable(text: "hello", w : 250, h : 35),
-        ColumnCellTable(text: "hello", w : 150, h : 35),
-        ColumnCellTable(text: "hello", w : 150, h : 35),
-        ColumnCellTable(text: "hello", w : 150, h : 35),
-        ColumnCellTable(text: "hello", w : 200, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
+        // ColumnCellTable(text: "hello", w : 80, h : 35),
+        // ColumnCellTable(text: "hello", w : 150, h : 35),
+        // ColumnCellTable(text: "hello", w : 60, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
+        // ColumnCellTable(text: "hello", w : 80, h : 35),
+        // ColumnCellTable(text: "hello", w : 120, h : 35),
+        // ColumnCellTable(text: "hello", w : 120, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
+        // ColumnCellTable(text: "hello", w : 100, h : 35),
       ],
+    );
+  }
+
+  Widget checkbox(BuildContext context){
+    return Checkbox(
+      checkColor: Colors.white,
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
     );
   }
 

@@ -1,32 +1,30 @@
-import 'package:chitfund/Widget/TButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
-import 'package:line_icons/line_icons.dart';
 
-import '../../Widget/aztextfield.dart';
+import '../../Widget/TButton.dart';
+import '../../Widget/Ttextfield.dart';
 import '../../Widget/columncelltable.dart';
 import '../../Widget/searchrow.dart';
 import '../../constrains.dart';
-import 'cAppbar.dart';
+import '../transactions/cAppbar.dart';
 
-class CommitmentSearchcopy extends StatefulWidget {
-  const CommitmentSearchcopy({Key? key}) : super(key: key);
+class DcBalanceCheckReport extends StatefulWidget {
+  const DcBalanceCheckReport({Key? key}) : super(key: key);
 
   @override
-  State<CommitmentSearchcopy> createState() => _CommitmentSearchcopyState();
+  State<DcBalanceCheckReport> createState() => _DcBalanceCheckReportState();
 }
 
-class _CommitmentSearchcopyState extends State<CommitmentSearchcopy> {
-
+class _DcBalanceCheckReportState extends State<DcBalanceCheckReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          cAppBar(ctitle: "Commitment Search", acc: "User 1"),
+          cAppBar(ctitle: "DC Balance Check Report", acc: "User 1"),
           Container(
             color: getColortheme(context).surfaceVariant,
             height: getHeight(context)-getHeight(context) * 0.1,
@@ -43,18 +41,68 @@ class _CommitmentSearchcopyState extends State<CommitmentSearchcopy> {
                 Row(
                   children: [
                     Spacer(flex: 2,),
-                    TButton(text: "Top", icon: Icons.arrow_circle_up, h: 35, w: 120),
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 1,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        width:180,
+                        height: 50,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                          border: InputBorder.none,
+                          labelText: "Date",
+                        ),
+                      )
+                    ),
                     Spacer(),
-                    TButton(text: "Excel", icon: Icons.file_copy_outlined, h: 35, w: 120),
+                    Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 1,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        width:240,
+                        height: 50,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            labelText: "Agent (select)",
+                          ),
+                        )
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Spacer(
+                      flex : 3
+                    ),
+                    TButton(text: "DC Transfer Posting", icon: Icons.done, h: 35, w: 200),
                     Spacer(),
-                    TButton(text: "Preview", icon: Icons.content_paste_search_sharp, h: 35, w: 120),
+                    Container(
+                      height: 35,
+                      width: 200,
+                      child: ElevatedButton(
+                        onPressed: () {  },
+                        child: Text("Clear Premium    (F12)"),
+                      ),
+                    ),
                     Spacer(),
-                    TButton(text: "Pdf", icon: Icons.picture_as_pdf, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Bottom", icon: Icons.arrow_circle_down_outlined, h: 35, w: 120),
-                    Spacer(),
-                    TButton(text: "Close (ESC)", icon: Icons.close, h: 35, w: 120),
-                    Spacer(flex: 2,)
+                    TButton(text: "Exit", icon: Icons.close, h: 35, w: 75),
+                    Spacer()
                   ],
                 ),
                 SizedBox(
@@ -90,17 +138,15 @@ class _CommitmentSearchcopyState extends State<CommitmentSearchcopy> {
   List<Widget> _getTitleWidget() {
     return [
       _getTitleItemWidget('S. No', 70),
-      _getTitleItemWidget('Group No', 100),
-      _getTitleItemWidget('T No', 80),
-      _getTitleItemWidget('Ledger', 150),
-      _getTitleItemWidget('CCode', 80),
-      _getTitleItemWidget('Rem Tic', 100),
-      _getTitleItemWidget('Inst No', 100),
-      _getTitleItemWidget('Commit Amt', 100),
-      _getTitleItemWidget('Month', 100),
-      _getTitleItemWidget('Commit Date', 100),
-      _getTitleItemWidget('Paid Amount', 100),
-      _getTitleItemWidget('Paid Date', 150),
+      _getTitleItemWidget('Group', 100),
+      _getTitleItemWidget('Tic No', 80),
+      _getTitleItemWidget('Customers', 240),
+      _getTitleItemWidget('A Inst', 100),
+      _getTitleItemWidget('Auct Date', 180),
+      _getTitleItemWidget('Arrear', 150),
+      _getTitleItemWidget('DC Bal', 100),
+      _getTitleItemWidget('Post No', 100),
+      _getTitleItemWidget('Bill Date', 100),
     ];
   }
 
@@ -136,12 +182,10 @@ class _CommitmentSearchcopyState extends State<CommitmentSearchcopy> {
       children: [
         ColumnCellTable(text: "hello", w : 100, h : 35),
         ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 240, h : 35),
+        ColumnCellTable(text: "hello", w : 100, h : 35),
+        ColumnCellTable(text: "hello", w : 180, h : 35),
         ColumnCellTable(text: "hello", w : 150, h : 35),
-        ColumnCellTable(text: "hello", w : 80, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
         ColumnCellTable(text: "hello", w : 100, h : 35),
         ColumnCellTable(text: "hello", w : 100, h : 35),
         ColumnCellTable(text: "hello", w : 100, h : 35),

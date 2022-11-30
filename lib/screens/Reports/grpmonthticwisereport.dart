@@ -10,20 +10,20 @@ import '../../Widget/searchrow.dart';
 import '../../constrains.dart';
 import '../transactions/cAppbar.dart';
 
-class IncentiveSearch extends StatefulWidget {
-  const IncentiveSearch({Key? key}) : super(key: key);
+class GroupMonthWiseTicketReport extends StatefulWidget {
+  const GroupMonthWiseTicketReport({Key? key}) : super(key: key);
 
   @override
-  State<IncentiveSearch> createState() => _IncentiveSearchState();
+  State<GroupMonthWiseTicketReport> createState() => _GroupMonthWiseTicketReportState();
 }
 
-class _IncentiveSearchState extends State<IncentiveSearch> {
+class _GroupMonthWiseTicketReportState extends State<GroupMonthWiseTicketReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          cAppBar(ctitle: "Incentive Search", acc: "User 1"),
+          cAppBar(ctitle: "Group Monthly Ticket Wise Report", acc: "User 1"),
           Container(
             color: getColortheme(context).surfaceVariant,
             height: getHeight(context)-getHeight(context) * 0.1,
@@ -63,7 +63,7 @@ class _IncentiveSearchState extends State<IncentiveSearch> {
                   width: double.infinity,
                   child: HorizontalDataTable(
                     leftHandSideColumnWidth: 70,
-                    rightHandSideColumnWidth: 1180,
+                    rightHandSideColumnWidth: 1350,
                     isFixedHeader: true,
                     itemCount: 10,
                     rowSeparatorWidget: const Divider(
@@ -87,17 +87,21 @@ class _IncentiveSearchState extends State<IncentiveSearch> {
   List<Widget> _getTitleWidget() {
     return [
       _getTitleItemWidget('S. No', 70),
-      _getTitleItemWidget('Agent', 150),
-      _getTitleItemWidget('Date From', 100),
-      _getTitleItemWidget('Date To', 100),
-      _getTitleItemWidget('Grade Level', 100),
-      _getTitleItemWidget('Incentive', 80),
-      _getTitleItemWidget('Group No', 100),
-      _getTitleItemWidget('Tic No', 80),
       _getTitleItemWidget('Ledger', 180),
-      _getTitleItemWidget('Auct Date', 100),
-      _getTitleItemWidget('Bill Date', 100),
-      _getTitleItemWidget('Days', 80),
+      _getTitleItemWidget('Tic No', 60),
+      _getTitleItemWidget('Cur. Bal', 100),
+      _getTitleItemWidget('Total', 100),
+      _getTitleItemWidget('05-May-22', 80),
+      _getTitleItemWidget('06-May-22', 80),
+      _getTitleItemWidget('07-May-22', 80),
+      _getTitleItemWidget('08-May-22', 80),
+      _getTitleItemWidget('09-May-22', 80),
+      _getTitleItemWidget('10-May-22', 80),
+      _getTitleItemWidget('11-May-22', 80),
+      _getTitleItemWidget('12-May-22', 80),
+      _getTitleItemWidget('13-May-22', 80),
+      _getTitleItemWidget('14-May-22', 80),
+      _getTitleItemWidget('15-May-22', 80),
     ];
   }
 
@@ -131,16 +135,20 @@ class _IncentiveSearchState extends State<IncentiveSearch> {
   Widget _generateRightHandSideColumnRow(BuildContext context, int index){
     return Row(
       children: [
-        ColumnCellTable(text: "hello", w : 150, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 80, h : 35),
-        ColumnCellTable(text: "hello", w : 100, h : 35),
-        ColumnCellTable(text: "hello", w : 80, h : 35),
         ColumnCellTable(text: "hello", w : 180, h : 35),
+        ColumnCellTable(text: "hello", w : 60, h : 35),
         ColumnCellTable(text: "hello", w : 100, h : 35),
         ColumnCellTable(text: "hello", w : 100, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
+        ColumnCellTable(text: "hello", w : 80, h : 35),
         ColumnCellTable(text: "hello", w : 80, h : 35),
       ],
     );
